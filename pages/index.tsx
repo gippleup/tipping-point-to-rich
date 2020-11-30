@@ -1,7 +1,14 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import React from 'react';
 
 export default function Home() {
+  React.useEffect(() => {
+    fetch("http://localhost:3000/api/reinfo?targetArea=seoul&ymd=200801")
+    .then((res) => res.json())
+    .then((json) => console.log(json));
+  })
+  
   return (
     <div className={styles.container}>
       <Head>
